@@ -1,0 +1,93 @@
+
+Contact Info:
+    If you have any questions, feel free to call me at 510-541-6628 9am-10pm PDT. You can also reach me at oaklandmax@gmail.com for less urgent issues.
+
+Database:
+    Parameters for the database are defined in include/survey_lib.php:
+
+    SERVERNAME: "localhost"
+    USERNAME: "maxperez"
+    PASSWORD: "hireme"
+    DBNAME: "wmf_survey"
+    TABLE: "fav_things"
+
+    The sql file to create the table is include/wmf_survey.sql and the command to restore the database is 
+        "mysql wmf_survey <  wmf_survey.sql"
+    You may have to create the wmf_survey database on your system first, and have the rights to access it.
+
+Version information:
+    This shouldn't matter too much as I tried to write this as platform independent as I could, but it may be usefull information anyway.
+    PHP: 5.5.38
+    MySQL: Ver 14.14 Distrib 5.5.20, for osx10.6 (i386) using readline 5.1
+    OSX: 10.10.5
+
+
+File Structure:
+    The template files are located at the root of this package, with lib, css and sql files in the 'include' directory. 
+    You should be able to extract the following files:
+
+        include
+        index.php
+        install_notes.txt
+        report.php
+        thanks.php
+
+        ./include:
+        footer.php
+        header.php
+        main.css
+        survey_lib.php
+        wmf_survey.sql
+
+
+Application Description:
+
+    The requirements for this project said that the data must be saved to the database. 
+    so one could access the data using something like the following, depending on the specifics of your database:
+        "mysqldump -u USERNAME -p -h HOST --no-create-info --skip-triggers YOURDATABASENAME fav_things --where='id=12345678'"
+
+            The task: PHP+MySQL survey app
+
+            A PHP application with the following features:
+
+                A survey page asks a number of questions in an HTML form. Some questions are multiple choice, some have free text.
+                When the form is submitted, the answers are saved. A thank you page is displayed.
+                A report page summarizes the previously submitted answers. For multiple-choice questions, the report should show the number of responses for each choice. 
+                For free text questions, the report should show the three most common unique answers along with the number of responses for each of those popular answers.
+                Individual submissions must be saved to the database for later export. The export feature should not actually be implemented.
+
+            Technical requirements:
+
+                Use MySQL.
+                Do not use a framework such as Laravel or Drupal. You may use a pre-existing autoloader or unit testing library.
+                The report page should be efficient, taking a short time to generate even if there are a very large number of responses.
+                Use transactions if they are necessary to guarantee consistency.
+                Describe any necessary setup.
+                CSS is optional and will not be assessed.
+
+            Survey questions and answers:
+
+                What's your favorite pony type?
+                    Alicorn
+                    Earth Pony
+                    Pegasus
+                    Unicorn
+                    Sea Pony
+                    Zebra
+                Who's your favorite princess?
+                    Luna
+                    Celestia
+                    Cadance
+                    Twilight
+                Who's your favorite pet?
+                    Opal
+                    Owloysius
+                    Angel
+                    Tank
+                    Gummy
+                    Winona
+                Which character do you want to see more of?
+                    [free text input]
+                What's your favorite MLP fanfic?
+                    [free text input]
+

@@ -1,0 +1,46 @@
+body {
+    color:darkslategrey;
+    background-color:beige;
+    
+    margin:auto;
+}
+
+option, select {
+    background-color:white;
+}    
+
+label {
+    display: inline-block;
+    min-width:400px;
+}
+
+a:link {
+    text-decoration: none;
+}
+a:hover {text-decoration:underline;}
+#header {
+    text-align: center;
+    /* alignment-adjust: central; */
+    width:100%;
+    background-color:lightgray;
+    padding: 10px 0 10px 0;
+    margin-bottom: 1em;
+}
+#contents {
+    padding: 20px;
+    max-width:960px;
+    margin:auto;
+}
+#footer {
+    /*padding: 40px;*/
+    background-color:lightgray;
+}
+
+#homelink {
+    margin-top:40px;
+}
+
+.input {
+    clear:both;
+    margin-top:20px;
+}
